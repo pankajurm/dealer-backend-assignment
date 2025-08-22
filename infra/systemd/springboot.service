@@ -1,0 +1,16 @@
+[Unit]
+Description=Spring Boot Application - Dealer Backend
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/dealer-backend-assignment
+ExecStart=/usr/bin/java -jar /home/ubuntu/dealer-backend-assignment/RequestHandling2-0.0.1-SNAPSHOT.jar
+SuccessExitStatus=143
+Restart=always
+RestartSec=10
+StandardOutput=file:/home/ubuntu/dealer-backend-assignment/app.log
+StandardError=file:/home/ubuntu/dealer-backend-assignment/app.log
+
+[Install]
+WantedBy=multi-user.target
